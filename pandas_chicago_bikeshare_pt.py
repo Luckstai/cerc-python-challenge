@@ -2,23 +2,24 @@
 
 # Começando com os imports
 import csv
+from turtle import shape
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Vamos ler os dados como uma lista
+# Vamos ler os dados como um pandas dataframe
 print("Lendo o documento...")
-with open("chicago.csv", "r") as file_read:
-    reader = csv.reader(file_read)
-    data_list = list(reader)
+df = pd.read_csv('chicago.csv')
 print("Ok!")
+print('TOMA')
+print(df[df['Gender'] == "Female" or df["Gender"] == "female"].shape)
 
 # Vamos verificar quantas linhas nós temos
 print("Número de linhas:")
-print(len(data_list))
+print(df.shape[0])
 
 # Imprimindo a primeira linha de data_list para verificar se funcionou.
 print("Linha 0: ")
-print(data_list[0])
+print(df.head(1))
 # É o cabeçalho dos dados, para que possamos identificar as colunas.
 
 # Imprimindo a segunda linha de data_list, ela deveria conter alguns dados
@@ -26,14 +27,10 @@ print("Linha 1: ")
 print(data_list[1])
 
 input("Aperte Enter para continuar...")
-
-df = pd.read_csv('chicago.csv')
-
-
 # TAREFA 1
 # TODO: Imprima as primeiras 20 linhas usando um loop para identificar os dados.
 print("\n\nTAREFA 1: Imprimindo as primeiras 20 amostras")
-for i in range(1, 21):
+for i in range(20):
     print(data_list[i])
 
 # Vamos mudar o data_list para remover o cabeçalho dele.
@@ -121,7 +118,6 @@ input("Aperte Enter para continuar...")
 def count_gender(data_list):
     male = 0
     female = 0
-    teste = 0
 
     data_list_size = len(data_list)
 
@@ -130,13 +126,14 @@ def count_gender(data_list):
 
         if gender == "Female":
             female += 1
+        if gender == "female":
+            female += 1
 
         if gender == "Male":
             male += 1
+        if gender == "male":
+            male += 1
 
-        if gender != "Female" and gender != "Male":
-            teste += 1
-    print("AQUIIIIIIIII", teste)
     return [male, female]
 
 
@@ -159,14 +156,7 @@ input("Aperte Enter para continuar...")
 
 
 def most_popular_gender(data_list):
-    male, female = count_gender(data_list)
-    answer = None
-    if male > female:
-        answer = "Male"
-    if female > male:
-        answer = "Female"
-    if female == male:
-        answer = "Equal"
+    answer = ""
     return answer
 
 
@@ -196,16 +186,7 @@ input("Aperte Enter para continuar...")
 # TAREFA 7
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
-# user_type_list = column_to_list(data_list, -3)
-# types = ["Subscribe", "Customer User Type", "Dependent"]
-# quantity = count_gender(data_list)
-# y_pos = list(range(len(types)))
-# plt.bar(y_pos, quantity)
-# plt.ylabel('Quantidade')
-# plt.xlabel('Tipo de Usuário')
-# plt.xticks(y_pos, types)
-# plt.title('Quantidade por Tipo de Usuário')
-# plt.show(block=True)
+
 
 input("Aperte Enter para continuar...")
 # TAREFA 8
@@ -213,7 +194,7 @@ input("Aperte Enter para continuar...")
 male, female = count_gender(data_list)
 print("\nTAREFA 8: Por que a condição a seguir é Falsa?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "A condição é falsa porque na função count_gender o algoritimo considera apenas Female e Male na contagem e o dataset do desafio contém amostras sem a informação gênero (string vazia)."
+answer = "Escreva sua resposta aqui."
 print("resposta:", answer)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
@@ -277,7 +258,7 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
-answer = "yes"
+answer = "no"
 
 
 def count_items(column_list):
