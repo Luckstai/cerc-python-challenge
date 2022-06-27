@@ -1,0 +1,90 @@
+=====================================================================================================================================
+
+def column_to_list(data: list, index: int) -> list:
+   
+   Argumentos:
+       data: Matriz representando um dataset.
+       Exemplo:
+       [
+            ["NAME","AGE","STUDENT"],
+            ["LUCAS",26,True],
+            ["Fulano",85, False]
+        ]
+       index: Indice da coluna que deseja retornar como lista.
+   Retorna:
+       Uma lista com os valores da coluna desejada na matriz.
+
+=====================================================================================================================================
+
+def count_gender(data_list: list) -> list:
+   
+   Argumentos:
+       data_list: Matriz representando um dataset.
+   Retorna:
+       Uma lista contendo o total de gênero "Male" no indice 0 e no indice 1 o total de gênero "Female".
+
+=====================================================================================================================================
+
+def count_user_type(data_list: list) -> str:
+   
+   Argumentos:
+       data_list: Matriz representando um dataset.
+   Retorna:
+       Uma lista contendo o total de tipo de usuário "Subscriber" no indice 0,
+       no indice 1 o total de tipo de usuário "Customer" e no indice 2 o total de tipo de usuário "Dependent".
+
+=====================================================================================================================================
+
+def most_popular_gender(data_list: list) -> list:
+   
+   Argumentos:
+       data_list: Array representando a coluna Gender do dataset.
+   Retorna:
+       O gênero mais popular em uma string, podendo ser Female, Male ou Equal
+
+=====================================================================================================================================
+
+def calc_max(trip_duration_list: list) -> int:
+   
+   Argumentos:
+       trip_duration_list: Array com tempo de duração das viagens.
+   Retorna:
+       O maior tempo de duração da coluna Trip Duration.
+
+=====================================================================================================================================
+
+def calc_min(trip_duration_list: list) -> int:
+   
+   Argumentos:
+       trip_duration_list: Array com tempo de duração das viagens.
+   Retorna:
+       O menor tempo de duração da coluna Trip Duration.
+
+=====================================================================================================================================
+
+def calc_mean(trip_duration_list: list) -> int:
+   
+   Argumentos:
+       trip_duration_list: Array com tempo de duração das viagens.
+   Retorna:
+       A média dos valores da coluna Trip Duration.
+
+=====================================================================================================================================
+
+def calc_median(trip_duration_list: list) -> int:
+   
+   Argumentos:
+       trip_duration_list: Array com tempo de duração das viagens.
+   Retorna:
+       A mediana dos valores da coluna Trip Duration.
+
+=====================================================================================================================================
+
+def count_items(column_list: list) -> tupla:
+   
+   Argumentos:
+       trip_duration_list: Array representando qualquer coluna do dataset.
+   Retorna:
+       Uma tupla de duas posições, na primeira contendo a quantidade de tipos de itens da coluna e na segunda o total de itens.
+
+=====================================================================================================================================
